@@ -41,7 +41,7 @@
             # code...
             break;       
     }
-    switch ($num[1]) {
+    switch ($num[1]){
         case '1':
             echo "uno";
             break;
