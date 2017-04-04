@@ -1,0 +1,5 @@
+﻿Bruno - Pretti - 36806053 - m - 10 - 1000
+Marina - Meza - 12053554 - m - 20 - 2000
+Puchi - Perro - 33333333 - m - 30 - 3000
+Ñandu - Perez - 44444444 - m - 40 - 4000
+Susana - Nose - 55555555 - f - 50 - 5000
