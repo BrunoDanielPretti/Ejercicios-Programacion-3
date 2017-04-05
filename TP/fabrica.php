@@ -99,7 +99,10 @@
             {
                 $linea = fgets($file)."<br>";
                 $miArray = explode(" - ", $linea) ;                
-                var_dump($miArray);
+                                
+                $empleado = new Empleado($miArray[0], $miArray[1], $miArray[2], $miArray[3], $miArray[4], $miArray[5]);
+                
+                echo $empleado->ToString();
                 echo "<br>";
             }
             echo "<br><br>";
