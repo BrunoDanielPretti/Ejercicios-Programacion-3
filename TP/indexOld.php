@@ -12,18 +12,25 @@
     echo "<br>asd<br><br>";
 
     $miFabrica = new Fabrica("Le Fabrica");
+    /*
     $miFabrica->AgregarEmpleado($miPersona);
     $miFabrica->AgregarEmpleado($per1);
     $miFabrica->AgregarEmpleado($per2);
     $miFabrica->AgregarEmpleado($per3);
+    */
 
-    $miFabrica->ToString();
+    echo "to string: <br>";
+    //echo $miFabrica->ToString();
     //$miFabrica->EliminarEmpleado($miPersona);
     //$miFabrica->ToString();
 
     //$miFabrica->GuardarFabrica();
 
-    echo "------------------------------------<br>";
+    //echo "------------------------------------<br>";
     //Fabrica::ImprimirArchivo();
-    $miFabrica->TraerFabrica();
+    //$miFabrica->TraerFabrica();
+    //$miFabrica->AgregarEmpleado($per1);
+    //$miFabrica->EliminarEmpleadosRepetidos();
+    echo $miFabrica->ToString();
+    
 ?>
