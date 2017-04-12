@@ -20,8 +20,8 @@
     if(file_exists($destino))
     {
         echo "El Archivo ya existe";
-        copy($destino, "backup/koalaviejo.jpeg");
-        $flag = false;
+        copy($destino, "backup/".date("y-m-d-H-i-s").$_FILES["foto"]["name"] );
+        $flag = true;
     }
 
 
