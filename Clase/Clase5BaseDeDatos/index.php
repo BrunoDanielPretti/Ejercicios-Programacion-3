@@ -1,7 +1,7 @@
 <?php
-    $conexion = mysqli_connect("localhost", "root", "", "ejemplouno"); //Direccion, Cuenta, contraseñña, base de datos
+    $conexion = mysqli_connect("localhost", "root", "", "mibase"); //Direccion, Cuenta, contraseñña, base de datos
     $id = 2;
-    $textoConsulta = "SELECT * FROM usuario WHERE id=$id";
+    $textoConsulta = "SELECT * FROM proveedores";
     //var_dump($textoConsulta);
     $consulta = mysqli_query($conexion, $textoConsulta );
     //var_dump($consulta);
