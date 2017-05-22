@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+     integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+     crossorigin="anonymous"></script>
+    <script src="js/funcionesBD.js"></script>
+    <title>Documento Marina</title>
+</head>
+
+<body>
+
+    <div class="container">       
+        <div class="panel panel-info">
+            <div class="panel-heading">Menu</div>
+            <div class="panel-body" id="menuBotones">                                  
+                <!--Numero:<input type="text" id="txtNumero" value=""><br>-->
+                <input readonly   type="hidden"    id="txtNumero" class="form-control" >
+                Descripcion:<input type="text" id="txtDescripcion" value=""><br>
+                Pais:<input type="text" id="txtPais" value=""><br> 
+                Foto:<input type="text" id="txtFoto" value=""><br> 
+                <input type="button" onclick="alta()" class="btn btn-success" value="Alta" id="btnAlta">
+                <input type="button" class="btn btn-info" value="BorrarPersona" id="btnBorrarPersona">
+                <input type="button" class="btn btn-danger" value="BorrarTodo" id="btnBorrarTodo">
+            </div>
+        </div>
+                
+
+        <div class="panel panel-info">
+            <div class="panel-heading">Respuesta</div>
+            <div class="panel-body" id="salida">Presiona el botón para iniciar</div>
+        </div>
+        
+        <button id="get_btn" onclick="mostrar()" class="btn btn-info">Cargar Datos</button>
+        <button id="btnRecuperar" class="btn btn-warning">Recuperar Datos</button>
+        <button class="btn btn-info" onclick="prueba('hoaaaaaaaala')">Prueba</button>
+
+    </div>
+
+</body>
+
+</html>
