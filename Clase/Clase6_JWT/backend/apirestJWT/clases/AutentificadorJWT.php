@@ -4,6 +4,7 @@
 
     class AutentificadorJWT{
         private static $claveSecreta = "acaVaUnaClaveSecreta";
+        private static $tipoEncriptacion = 'HS256';
 
         public static function CrearToken($datos){
             $ahora = time();
@@ -18,7 +19,8 @@
         }
 
         public static function VirificarToken($pToken){
-            $decodificado = JWT::decode($pToken, self::$claveSecreta);
+            $decodificado = JWT::decode($pToken, self::$claveSecreta, array(self::$tipoEncriptacion) );
+            return $decodificado;
         }
     }
 

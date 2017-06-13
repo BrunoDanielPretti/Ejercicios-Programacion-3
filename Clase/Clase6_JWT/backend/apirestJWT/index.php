@@ -29,10 +29,34 @@ $app = new \Slim\App(["settings" => $config]);
 
 
 $app->get('[/]', function (Request $request, Response $response) {    
+    //$response->getBody()->write("GET => Bienvenido!!! ,a SlimFramework");
+    $datos = array('juan' => 'rogelio','apellido' => 'peres', 'edad' => 33);
+    
+    $token = AutentificadorJWT::CrearToken($datos);
+      
+    $decod = AutentificadorJWT::VirificarToken($token);
+    $newResponse = $response->withJson($token, 200);
+    var_dump($decod);
+    //return $newResponse;
+    
+});
+
+$app->get('/nuevoToken/', function (Request $request, Response $response) {    
     $response->getBody()->write("GET => Bienvenido!!! ,a SlimFramework");
     $datos = array('juan' => 'rogelio','apellido' => 'peres', 'edad' => 33);
     
-    $token = AutentificadorJWT::CrearToken("tacos");
+    $token = AutentificadorJWT::CrearToken($datos);
+      
+    $newResponse = $response->withJson($token, 200);
+    return $newResponse;
+    
+});
+
+$app->get('/verificarToken/', function (Request $request, Response $response) {    
+    $response->getBody()->write("GET => Bienvenido!!! ,a SlimFramework");
+    $datos = array('juan' => 'rogelio','apellido' => 'peres', 'edad' => 33);
+    
+    $token = AutentificadorJWT::CrearToken($datos);
       
     AutentificadorJWT::VirificarToken($token);
     $newResponse = $response->withJson($token, 200);
