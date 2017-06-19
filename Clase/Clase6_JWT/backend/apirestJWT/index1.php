@@ -34,14 +34,15 @@ $app->get('[/]', function (Request $request, Response $response) {
     
     $token = AutentificadorJWT::CrearToken($datos);
       
-    $decod = AutentificadorJWT::VirificarToken($token);
-    $newResponse = $response->withJson($token, 200);
-    var_dump($decod);
+    $decod = AutentificadorJWT::VirificarToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJJQVQiOjE0OTc1Nzg2MjQsIkVYUCI6MTQ5NzU3ODY4NCwiREFUQSI6eyJqdWFuIjoicm9nZWxpbyIsImFwZWxsaWRvIjoicGVyZXMiLCJlZGFkIjozM30sIkFQUCI6ImFwaXJlc3QgSldUIn0.UrfbT3dHPR1Lr783rS-PgnurqK_0kUuYN4athW32yi4");
+    $newResponse = $response->withJson($decod, 200);
+    //var_dump($decod);
+    //var_dump($token);
     //return $newResponse;
     
 });
 
-$app->get('/nuevoToken/', function (Request $request, Response $response) {    
+$app->get('/nuevoToken', function (Request $request, Response $response) {    
     $response->getBody()->write("GET => Bienvenido!!! ,a SlimFramework");
     $datos = array('juan' => 'rogelio','apellido' => 'peres', 'edad' => 33);
     
@@ -52,12 +53,12 @@ $app->get('/nuevoToken/', function (Request $request, Response $response) {
     
 });
 
-$app->get('/verificarToken/', function (Request $request, Response $response) {    
+$app->get('/verificarToken', function (Request $request, Response $response) {    
     $response->getBody()->write("GET => Bienvenido!!! ,a SlimFramework");
     $datos = array('juan' => 'rogelio','apellido' => 'peres', 'edad' => 33);
     
-    $token = AutentificadorJWT::CrearToken($datos);
-      
+    //$token = AutentificadorJWT::CrearToken($datos);
+    $token   = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJJQVQiOjE0OTc1NzkwMDIsIkVYUCI6MTQ5NzU3OTA2MiwiREFUQSI6eyJqdWFuIjoicm9nZWxpbyIsImFwZWxsaWRvIjoicGVyZXMiLCJlZGFkIjozM30sIkFQUCI6ImFwaXJlc3QgSldUIn0.c8bHpr96hdogiU2yTj46EQoHZkuG1FvGolE6317YAYo";
     AutentificadorJWT::VirificarToken($token);
     $newResponse = $response->withJson($token, 200);
     return $newResponse;

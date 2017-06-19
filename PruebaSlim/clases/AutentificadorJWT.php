@@ -10,7 +10,7 @@
             $ahora = time();
             $playLoad = array(              //el Token
                 'IAT' => $ahora,
-                'EXP' => $ahora + 60,
+                'EXP' => $ahora + 20,
                 'DATA' => $datos,
                 'APP' => "apirest JWT"
             );
@@ -20,10 +20,14 @@
 
         public static function VirificarToken($pToken){
             try{
-                JWT::decode($pToken, self::$claveSecreta, array(self::$tipoEncriptacion) );
+                $decod = JWT::decode($pToken, self::$claveSecreta, array(self::$tipoEncriptacion) );
             }
-            catch(exeption $e){
-                throw new Exception("Error Processing Request", 404);
+            catch(\exeption $e){
+                throw new exception("Error de procesamiento", 404);
+            }
+            
+            if ($decod->EXP < time() ) {
+                throw new exception('Expiro');
             }
             
             

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="js/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>    
+    <script src="js/botones.js"> </script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-info">
+            <div class="panel-heading">Menu</div>
+            <div class="panel-body" id="menuBotones">                                                  
+                <input type="button" class="btn btn-info" value="get" onclick="btnNexo()">
+                <input type="button" class="btn btn-info" value="post" onclick="paseSinParam('', 'POST')">
+                <input type="button" class="btn btn-info" value="p" onclick="paseSinParam('p')">                                  
+                <br><br>
+                <input type="button" class="btn btn-info" value="midle" onclick="paseSinParam('midle')"> 
+                <input type="button" class="btn btn-info" value="nexo/hola" onclick="paseSinParam('nexo/hola asdas')"> 
+                <input type="button" class="btn btn-info" value="getToken" onclick="paseSinParam('getNewToken')"> 
+                <input type="button" class="btn btn-info" value="ValidarToken" onclick="paseSinParam('ValidarToken')"> 
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="txtNombre">nombre</label>
+                        <input type="text" class="form-control" id="txtNombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtNumero">numero</label>
+                        <input type="text" class="form-control" id="txtNumero">
+                    </div>
+                    <button type="button" class="btn btn-success" onclick="EnviarParametros()">Enviar</button>
+                </form>                 
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Info: 
+                <span id="infoSpan" ></span>
+                <a class="right" id="infoDosSpan" ></a>
+            </div>
+            <div class="panel-body" id="info">                                                  
+                    
+            </div>
+            <div class="panel-footer">
+                <p>Fin</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
