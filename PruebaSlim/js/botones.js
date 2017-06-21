@@ -5,14 +5,14 @@ function btnNexo(){
 }
 
 
-function EnviarParametros(){
+function EnviarParametros(param, metodo="GET"){
     envio = {
         nombre: $("#txtNombre").val(),
         numero: $("#txtNumero").val()
     }
     $.ajax({
-        url: pNexo+"parametros",
-        type: "POST",
+        url: pNexo+param,
+        type: metodo,
         data: envio,
         dataType: "text"
     }).done(function(datos){

@@ -22,7 +22,10 @@
                 <input type="button" class="btn btn-info" value="midle" onclick="paseSinParam('midle')"> 
                 <input type="button" class="btn btn-info" value="nexo/hola" onclick="paseSinParam('nexo/hola asdas')"> 
                 <input type="button" class="btn btn-info" value="getToken" onclick="paseSinParam('getNewToken')"> 
-                <input type="button" class="btn btn-info" value="ValidarToken" onclick="paseSinParam('ValidarToken')"> 
+                <input type="button" class="btn btn-info" value="ValidarToken" onclick="paseSinParam('ValidarToken')">
+                <br><br>
+                <input type="button" class="btn btn-info" value="Pelota GET" onclick="paseSinParam('pelota/', 'GET')">  
+                <input type="button" class="btn btn-info" value="Pelota POST" onclick="paseSinParam('pelota/', 'POST')">  
                 <form class="form-inline">
                     <div class="form-group">
                         <label for="txtNombre">nombre</label>
@@ -32,7 +35,7 @@
                         <label for="txtNumero">numero</label>
                         <input type="text" class="form-control" id="txtNumero">
                     </div>
-                    <button type="button" class="btn btn-success" onclick="EnviarParametros()">Enviar</button>
+                    <button type="button" class="btn btn-success" onclick="EnviarParametros('parametros',)">Enviar</button>
                 </form>                 
             </div>
         </div>

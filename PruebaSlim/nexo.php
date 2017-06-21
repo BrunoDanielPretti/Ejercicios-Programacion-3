@@ -4,6 +4,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require 'vendor/autoload.php';
 require 'clases/AutentificadorJWT.php';
+require 'clases/pelotaApi.php';
 
 //\slim\Slim::registerAutoloader();
 //$app = new \Slim\App();
@@ -71,7 +72,50 @@ $app->get('/ValidarToken', function (Request $request, Response $response) {
     //var_dump($decod);
 });
 
+//------------------------------------ GROUP ----------------------------------------------------------//
+
+
+$app->group('/pelota', function () {
+    
+    $this->get('/', \PelotaApi::class . ':MostrarAlgo');
+    $this->post('/', \PelotaApi::class . ':MostrarEnApi');
+//   $this->get('/', \cdApi::class . ':traerTodos'); 
+//   $this->get('/{id}', \cdApi::class . ':traerUno');
+//   $this->post('/', \cdApi::class . ':CargarUno');
+//   $this->delete('/', \cdApi::class . ':BorrarUno');
+//   $this->put('/', \cdApi::class . ':ModificarUno');
+  
+})->add(\PelotaApi::class . ':Verificar');
+
+/*
+->add(function ($request, $response, $next) {
+    //$response->getBody()->write('HOLA!!!!!!! <br>      ');
+
+    $response = $next($request, $response);
+    //$response->getBody()->write('. Enjoy!');
+      
+    $newResponse = $response->withJson("HOLAAA", 200);    
+    return $newResponse;
+});
+*/
+
+
+
+// $app->post("/pelota", function(){
+//     echo "ASDASDASD";
+// });
+
+
+
+
+
+
+
+
+
+
 //----------------------------------------------------------------------------------------------//
+
 
 function miMidle1(){
     echo "echo de miMidle 1";   

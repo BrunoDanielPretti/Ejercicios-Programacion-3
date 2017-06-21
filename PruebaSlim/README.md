@@ -1,7 +1,9 @@
 JWT = Jason Web Token
 buscar {
-    MiDDleware Slim3
+    MiDDleware Slim3   PSR7
+
     firebase
+        iat toma el IP??
 } 
 
 
