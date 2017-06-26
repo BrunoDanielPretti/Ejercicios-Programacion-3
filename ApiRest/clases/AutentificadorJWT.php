@@ -45,7 +45,7 @@
         }
 
         public function Verificar($request, $response, $next){
-            $verificar = true;
+            $verificar = false;
             
             if($verificar == false || !empty($_COOKIE["token"]) ){
                 $response = $next($request, $response);    

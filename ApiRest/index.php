@@ -60,6 +60,8 @@ $app->group('/pelota', function () {
 
   $this->delete('/{id}', \PelotaApi::class . ':BorrarUno');
 
+  $this->put('/post', \PelotaApi::class . ':ModificarUnoPost');
+
   $this->put('/', \PelotaApi::class . ':ModificarUno');
   
 })->add(\AutentificadorJWT::class . ':Verificar');
@@ -69,7 +71,7 @@ $app->group('/t', function(){
     $this->get('/', \AutentificadorJWT::class . ':VerToken');
 });
 
-
+$app->post('/arch', \PelotaApi::class . ':SubirArchivo');
 
 $app->run();
 

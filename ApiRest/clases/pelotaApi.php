@@ -51,7 +51,7 @@ class PelotaApi extends Pelota{
       	return $newResponse;		
     }
 
-    public function ModificarUno($request, $response, $args) {     	
+    public function ModificarUnoPost($request, $response, $args) {     	
      	$Parametros = $request->getParsedBody();
        
         //_METHOD PUT
@@ -64,7 +64,33 @@ class PelotaApi extends Pelota{
 		return $response->withJson($objDelaRespuesta, 200);		
     }
 
-    
+    public function ModificarUno($request, $response, $args) {     	
+     	$Parametros = $request->getHeaders();                
+        //var_dump($Parametros);        
+
+        $miPelota = new Pelota();
+        $miPelota->nombre = $Parametros['HTTP_NOMBRE'][0]; //$Parametros['nombre'];
+        $miPelota->color  = $Parametros['HTTP_COLOR'][0];
+        $miPelota->id     = $Parametros['HTTP_ID'][0]; //$Parametros['id'];
+
+        $objDelaRespuesta = $miPelota->ModificarPelota();        
+		return $response->withJson($objDelaRespuesta, 200);		
+    }
+
+    public function SubirArchivo($request, $response, $args){        
+        $archivos = $request->getUploadedFiles();
+        $destino="./archivos/";        
+
+        $nombreAnterior=$archivos['foto']->getClientFilename();
+        $extension= explode(".", $nombreAnterior)  ;
+        //var_dump($nombreAnterior);
+        $extension=array_reverse($extension);
+
+        $archivos['foto']->moveTo($destino.$nombreAnterior.".".$extension[0]);
+        $response->getBody()->write("se guardo el archivo");
+
+        return $response;
+    }
 
 }//Fin Class PelotaApi
 
