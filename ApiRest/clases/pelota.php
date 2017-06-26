@@ -4,14 +4,17 @@ class Pelota{
     public $nombre;
     public $color;
     
+    public __contruct(){
+        
+    }
 
-     public function InsertarPelota() 
-	 {
+    public function InsertarPelota() 
+	{
             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
             $consulta =$objetoAccesoDato->RetornarConsulta("INSERT INTO pelotas (nombre, color)VALUES('$this->nombre','$this->color')");
             $consulta->execute();
             return $objetoAccesoDato->RetornarUltimoIdInsertado();				
-	 }
+	}
 
     public static function TraerTodasLasPelotas()
 	{
